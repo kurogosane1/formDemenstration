@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <title>Forms</title>
+</head>
+
+<body>
+
+    <div class="container JumbotronsExist">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Fluid jumbotron</h1>
+                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="container">Select the type of iCharge</h2>
+    <div class="container selection">
+        <select class="form-control">
+            <option value=''></option>
+            <option value="FMT">Field Material Transfer</option>
+            <option value="Recharge">Recharges</option>
+            <option value="Others">Others</option>
+        </select>
+
+    </div>
+    <br>
+
+    <!-- This should show only if the FMT was selected -->
+    <div class="form-group container">
+        <label for="Reference">Reference</label>
+        <input type="text" class="form-control" id="Reference" placeholder="MXAR18002SA">
+        <br>
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" placeholder="FMT to .....">
+        <br>
+
+        <!-- Make the Date picker here -->
+
+    </div>
+
+    <!-- This shall show regardless as per default of iCharge -->
+    <div class="container">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="SendingManager">Sending Manager</label>
+                <input type="text" class="form-control" id="SendingManager" placeholder="Sending Manager">
+                <br>
+                <label for="SendingBusinessAnalyst">Business Analyst</label>
+                <input type="text" class="form-control" id="SendingBusinessAnalyst" placeholder="Sending Business Analyst">
+                <br>
+                <!-- this should show only once verified -->
+                <label for="SenBusinessAnalystLead">Business Analyst Lead</label>
+                <input type="text" class="form-control" id="SenBusinessAnalystLead" placeholder="Business Analyst Lead">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="ReceivingManager">Receiving Manager</label>
+                <input type="text" class="form-control" id="ReceivingManager" placeholder="Receiving Manager">
+                <br>
+                <label for="ReceivingBusinessAnalyst">Business Analyst</label>
+                <input type="text" class="form-control" id="ReceivingBusinessAnalyst" placeholder="Receiving Business Analyst">
+                <br>
+                <!-- This should show once verified -->
+                <label for="RecBusinessAnalystLead">Receiving Business Analyst</label>
+                <input type="text" class="form-control" id="RecBusinessAnalystLead" placeholder="Receiving Business Analyst Lead">
+            </div>
+
+
+        </div>
+
+        <label for="addMore">Copy Additional People</label>
+        <input type="text" class="form-control" id="addMore">
+
+        <br>
+        
+    </div>
+
+
+
+
+
+
+
+
+    <!-- this is the javascript cdns -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
