@@ -15,17 +15,19 @@
     <div class="container JumbotronsExist">
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h1 class="display-4">Fluid jumbotron</h1>
-                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                <h1 class="display-4">iCharge</h1>
+                <p class="lead">This is just a simple prototype of what to expect for iCharge</p>
             </div>
         </div>
     </div>
 
     <h2 class="container">Select the type of iCharge</h2>
     <div class="container selection">
-        <select class="form-control">
+        <select class="form-control fmts" onchange="genAdditional()">
             <option value=''></option>
             <option value="FMT">Field Material Transfer</option>
+            <option value="NONOFSFMT">Field Material Transfer Non-OFS</option>
+            <option value="INVENTORY">Inventory</option>
             <option value="Recharge">Recharges</option>
             <option value="Others">Others</option>
         </select>
@@ -34,12 +36,12 @@
     <br>
 
     <!-- This should show only if the FMT was selected -->
-    <div class="form-group container">
-        <label for="Reference">Reference</label>
-        <input type="text" class="form-control" id="Reference" placeholder="MXAR18002SA">
+    <div class="form-group container fmtOption">
+        <label for="Referenceid">Reference Number</label>
+        <input type="text" class="form-control" id="Referenceid" placeholder="MXAR18002SA">
         <br>
-        <label for="description">Description</label>
-        <input type="text" class="form-control" id="description" placeholder="FMT to .....">
+        <label for="tranid">Transaction ID</label>
+        <input type="text" class="form-control" id="tranid" placeholder="FMT to .....">
         <br>
 
         <!-- Make the Date picker here -->
@@ -79,9 +81,82 @@
         <input type="text" class="form-control" id="addMore">
 
         <br>
-        
-    </div>
 
+    </div>
+    <div class="container">
+        <div class="form-row">
+            <!-- This is sending side -->
+            <div class="form-group col-md-6">
+                <label for="senArea">Area</label>
+                <select class="form-control" name="sendArea" id="senArea" onchange="genSenArea()">
+                    <!-- this is where the sending area is generated -->
+                </select>
+                <br>
+                <label for="senGeo">Geomarket</label>
+                <select class="form-control" name="sendGeo" id="sendGeo" onchange="senGeo()">
+                    <!-- This is where the sending geomarket is generated -->
+                </select>
+                <br>
+                <label for="senGeo">Geomarket</label>
+                <select class="form-control" name="sendGeo" id="sendGeo" onchange="senGeo()">
+                    <!-- This is where the sending geomarket is generated -->
+                </select>
+                <br>
+                <label for="segment">Segment</label>
+                <select class="form-control" name="sendGeo" id="segment" onchange="genSeg()">
+                    <!-- This is where the sending segmentt is generated -->
+                </select>
+                <br>
+                <label for="erp">ERP</label>
+                <select class="form-control" name="erp" id="erp" onchange=>
+                    <option value=""></option>
+                    <option value="Lawson">Lawson</option>
+                    <option value="Oracle">Oracle</option>
+                    <option value="SAP">SAP</option>
+                </select>
+                <br>
+                <label for="sendCom">Sending Side Company</label>
+                <input type="text" class="form-control" id="sendCom" placeholder="Please enter Company number eg: 11">
+                <button onclick="senverify()"></button>
+                <div>Please input a valid company</div>
+
+            </div>
+            <!-- This is the receiving side -->
+            <div class="form-group col-md-6">
+                <label for="recArea">Area</label>
+                <select class="form-control" name="recArea" id="recArea" onchange="genRecArea()">
+                    <!-- this is where the receiving area is generated -->
+                </select>
+                <br>
+                <label for="recGeo">Geomarket</label>
+                <select class="form-control" name="recGeo" id="recGeo" onchange="recGeo()">
+                    <!-- This is where the sending geomarket is generated -->
+                </select>
+                <br>
+                <label for="segment">Segment</label>
+                <select class="form-control" name="sendGeo" id="segment" onchange="genSeg()">
+                    <!-- This is where the sending segment is generated -->
+                </select>
+                <br>
+                <label for="erp">ERP</label>
+                <select class="form-control" name="erp" id="erp" onchange=>
+                    <option value=""></option>
+                    <option value="Lawson">Lawson</option>
+                    <option value="Oracle">Oracle</option>
+                    <option value="SAP">SAP</option>
+                </select>
+                <br>
+                <label for="receivingCo">Receiving Side Company</label>
+                <input type="text" class="form-control" id="receivingCo" placeholder="Company number eg: 11">
+                <button onclick="recverify()"></button>
+                <div>Please input a valid company</div>
+
+
+            </div>
+        </div>
+
+
+    </div>
 
 
 
@@ -96,6 +171,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+    <script src="./action.js"></script>
 </body>
 
 </html>
